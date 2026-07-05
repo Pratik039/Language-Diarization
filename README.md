@@ -96,7 +96,7 @@ Comparing groundtruth RTTMs with the system generated RTTMs
 
 ## How to run
 
-1. Place audio files in data directory according the file structure shown above
+1. Place audio files in data directory according to the file structure shown above
 
 2. Clone the dscore repository (**https://github.com/nryant/dscore**) in the output directory
 
