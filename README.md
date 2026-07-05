@@ -150,12 +150,14 @@ pip install dover-lap
 
 After successful installation, run
 
+```text
 dover-lap [OPTIONS] OUTPUT_RTTM [INPUT_RTTMS]...
+```
 
 **Example**
-
+```text
 dover-lap egs/ami/rttm_dl_test egs/ami/rttm_test_*
-
+```
 
 ## 🔑 Hugging Face Authentication
 
