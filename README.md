@@ -23,22 +23,25 @@ Install Anaconda on your system from **https://repo.anaconda.com/archive/**
 
 Create an environment using the configuration file **baseline.yaml** by running:
 
+```text
 conda env create -f baseline.yaml
+```
 
 Activate the created environment by running:
 
+```text
 conda activate baseline
-
+```
 Make sure the pip version is below 24.1
 
 Run this command:
-
+```text
 pip install pip==24.0
-
+```
 Install the other required Python packages after creating the environment and setting the required version of **pip** by running:
-
+```text
 pip install pyannote.audio==0.0.1 numpy==1.26.4 openai-whisper fastcluster==1.2.0 kaldi_io pytorch-lightning==1.6.5
-
+```
 
 ### 2. Prepare the Audio File
 
