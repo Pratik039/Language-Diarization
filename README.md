@@ -100,7 +100,7 @@ Comparing groundtruth RTTMs with the system generated RTTMs
 
 2. Clone the dscore repository (**https://github.com/nryant/dscore**) in the output directory
 
-3. Run the run_all.sh inside code directory
+3. Run the run_all.sh file
 
 4. The run_all.sh takes audio files as input and gives the DER as output
 
