@@ -1,2 +1,165 @@
-# Language-Diarization
-A Python-based language diarization system that uses Whisper and ECAPA-TDNN posteriors to identify and segment different languages within a conversational audio files.
+# 🎙️ Language Diarization System
+
+A **Language Diarization** system which performs **Voice Activity Detection (VAD)**, extracts language-related features, and generates language diarization outputs.
+
+
+## ✨ Features
+
+* 🎤 Voice Activity Detection (Pyannote)
+* 🌍 Language Diarization for audio files
+* ⚡ Simple command-line interface
+* 🔧 Custom output directory support
+
+## 🚀 Getting Started
+
+### 1. Extract the Project
+
+Unzip/clone the provided archive:
+
+
+## 📦 Requirements
+
+Install Anaconda on your system from **https://repo.anaconda.com/archive/**
+
+Create an environment using the configuration file **baseline.yaml** by running:
+
+conda env create -f baseline.yaml
+
+Activate the created environment by running:
+
+conda activate baseline
+
+Make sure the pip version is below 24.1
+
+Run this command:
+
+pip install pip==24.0
+
+Install the other required Python packages after creating the environment and setting the required version of **pip** by running:
+
+pip install pyannote.audio==0.0.1 numpy==1.26.4 openai-whisper fastcluster==1.2.0 kaldi_io pytorch-lightning==1.6.5
+
+
+### 2. Prepare the Audio File
+
+Download the DISPLACE 2 Challenge data from:
+
+https://zenodo.org/records/10487448
+
+Download the MERLIon CCS Challenge data from:
+
+https://researchdata.ntu.edu.sg/dataset.xhtml?persistentId=doi:10.21979/N9/ANXS8Z
+
+## Audio Directory Structure
+
+```text
+               Data
+		         |
+		         |
+    ---------------------------
+    |                         |
+    |                         |
+    |                         |
+    |                         |
+   dev                       eval
+    |                         |
+    |                         |
+    |                         |
+    |                         |
+audio files              audio files
+
+```
+
+
+## ▶️ Running Language Diarization
+
+## Data Preprocessing
+
+Run VAD on the audio files to detect the speech regions
+
+VAD output is stored in .pkl files
+
+Convert them to segment files and then to Kaldi formatted segment files
+
+Finally create subsegments from the segments
+
+## Feature Extraction
+
+Based on the created subsegments, run the feature extraction to get the whisper/ECAPA-TDNN posteriors
+
+## Clustering
+Run the clustering algorithm (AHC) and perform VBHMM on top of it to generate RTTMs
+
+## Scoring
+
+Comparing groundtruth RTTMs with the system generated RTTMs
+
+## How to run
+
+1. Place audio files in data directory according the file structure shown above
+
+2. Clone the dscore repository (**https://github.com/nryant/dscore**) in the output directory
+
+3. Run the run_all.sh inside code directory
+
+4. The run_all.sh takes audio files as input and gives the DER as output
+
+## 📁 Output
+
+After successful execution, the system generates an output directory containing the language diarization results for the processed audio files.
+
+
+## 📂 Project Workflow
+
+```text
+ Input Audio (.wav)
+        │
+        ▼
+Voice Activity Detection (Pyannote)
+        │
+        ▼
+Feature Extraction
+        │
+        ▼
+   Clustering
+        │
+        ▼     
+VBx Resegmentation  
+        │
+        ▼
+Generated RTTM File
+        │
+        ▼
+  Output Files
+```
+
+
+## 📊 DOVER-Lap
+
+Install the required Python packages by running:
+
+pip install -r requirements.txt
+
+
+## 🔑 Hugging Face Authentication
+
+The script `VAD_kaldi_segments.py` uses a (**https://huggingface.co/pyannote/segmentation**) model hosted on Hugging Face.
+
+Before running the system:
+
+1. Create a Hugging Face account.
+2. Generate an **Access Token** from:
+
+   * **Profile → Settings → Access Tokens → Create New Token**
+3. Accept the license agreement for the required Pyannote model (**https://huggingface.co/pyannote/segmentation**) on Hugging Face.
+4. Replace the token in `VAD_kaldi_segments.py` with your own token (or authenticate using the Hugging Face CLI).
+
+> **Note:** The VAD step will not run unless a valid Hugging Face token is provided.
+
+
+## 🛠️ Troubleshooting
+
+* Ensure all required Python packages are installed.
+* Verify that the input audio file exists and the path is correct.
+* Make sure your Hugging Face token is valid.
+* Accept the license agreements for the required Pyannote models before running the VAD module.
