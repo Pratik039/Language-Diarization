@@ -96,11 +96,11 @@ Comparing groundtruth RTTMs with the system generated RTTMs
 
 ## How to run
 
-1. Place audio files in data directory according to the file structure shown above
+1. Place audio files in data directory according the file structure shown above
 
 2. Clone the dscore repository (**https://github.com/nryant/dscore**) in the output directory
 
-3. Run the run_all.sh file
+3. Run the run_all.sh inside code directory
 
 4. The run_all.sh takes audio files as input and gives the DER as output
 
@@ -136,9 +136,25 @@ Generated RTTM File
 
 ## 📊 DOVER-Lap
 
+Clone the dscore repository (**https://github.com/desh2608/dover-lap**) in the output directory
+
+## Installation
+
 Install the required Python packages by running:
 
 pip install -r requirements.txt
+
+pip install dover-lap
+
+## How to run
+
+After successful installation, run
+
+dover-lap [OPTIONS] OUTPUT_RTTM [INPUT_RTTMS]...
+
+**Example**
+
+dover-lap egs/ami/rttm_dl_test egs/ami/rttm_test_*
 
 
 ## 🔑 Hugging Face Authentication
