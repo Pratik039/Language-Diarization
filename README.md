@@ -147,9 +147,12 @@ Clone the dscore repository (**https://github.com/desh2608/dover-lap**) in the o
 
 Install the required Python packages by running:
 
+```text
 pip install -r requirements.txt
-
+```
+```text
 pip install dover-lap
+```
 
 ## How to run
 
