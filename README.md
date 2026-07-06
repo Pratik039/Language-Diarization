@@ -99,13 +99,15 @@ Comparing groundtruth RTTMs with the system generated RTTMs
 
 ## How to run
 
-1. Place audio files in data directory according the file structure shown above
+1. Place audio files in the data directory according to the file structure shown above
 
 2. Clone the dscore repository (**https://github.com/nryant/dscore**) in the output directory
 
-3. Run the run_all.sh inside code directory
+3. Run the run_all.sh script from within the code directory
 
-4. The run_all.sh takes audio files as input and gives the DER as output
+4. The run_all.sh takes audio files as input and generates RTTM as output
+ 
+5. The Diarization Error Rate (DER) is computed by comparing the ground-truth RTTM files with the system-generated RTTM files.
 
 ## 📁 Output
 
