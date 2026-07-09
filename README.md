@@ -95,18 +95,34 @@ pip install -r requirements.txt
 
 ## Feature Extraction
 
-1. Based on the created subsegments, run the feature extraction to get the Whisper/ECAPA-TDNN posteriors (feat_extr_whisper.py/feat_extr_ecapa.py)
+Based on the created subsegments, run the feature extraction to get the Whisper/ECAPA-TDNN posteriors (feat_extr_whisper.py/feat_extr_ecapa.py)
 
-2. Make necessary changes in the run_all.sh script based on the requirement
+## ⚙️ Dataset Configuration
 
-```text
-DISPLACE_DATAPATH="../data/"
+In the **run_all.sh** script, set the `DATA` variable depending on the dataset you want to process.
+
+For the development set:
+
+```bash
 DATA="dev"
+```
+
+For the evaluation set:
+
+```bash
+DATA="eval"
+```
+
+The remaining paths are constructed automatically:
+
+```bash
+DISPLACE_DATAPATH="../data/"
 DISPLACE_DATA="$DISPLACE_DATAPATH/$DATA"
 
 ref_RTTM="$DISPLACE_DATA/${DATA}_original.rttm"
 ```
 
+Simply change the value of `DATA` from `"dev"` to `"eval"` (or vice versa) before running the script.
 
 ## Clustering
 Runs the clustering algorithm (AHC) and performs VBHMM on top of it to generate RTTMs (clustering.py)
