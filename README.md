@@ -76,7 +76,7 @@ audio files              audio files
 ### 3. Setting up the scoring tool to compute DER
 1. Clone the dscore repository (**https://github.com/nryant/dscore**) in the code directory
 2. Install the required packages by running:
-3. 
+   
 ```text
 pip install -r requirements.txt
 ```
@@ -102,7 +102,8 @@ Run the clustering algorithm (AHC) and perform VBHMM on top of it to generate RT
 
 ## Scoring
 
-Comparing groundtruth RTTMs with the system generated RTTMs
+Combine the groundtruth RTTM files into a single RTTM file named dev_original.rttm / eval_original.rttm
+Compare groundtruth RTTMs with the system generated RTTMs to generate DER values
 
 ## How to run
 
