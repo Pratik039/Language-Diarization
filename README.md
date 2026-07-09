@@ -72,7 +72,13 @@ https://researchdata.ntu.edu.sg/dataset.xhtml?persistentId=doi:10.21979/N9/ANXS8
 audio files              audio files
 
 ```
+## 🎶 Audio Filename format: `<Letter><3 digits>.wav`
 
+Example:
+```text
+B002.wav
+S044.wav
+```
 ### 3. Setting up the scoring tool to compute DER
 1. Clone the dscore repository (**https://github.com/nryant/dscore**) in the **code** directory
 2. Move **all files and folders inside** the cloned `dscore` directory to the `code` directory
@@ -223,11 +229,3 @@ Before running the system:
 * Verify that the input audio file exists and the path is correct.
 * Make sure your Hugging Face token is valid.
 * Accept the license agreements for the required Pyannote models before running the VAD module.
-
-## 🎶 Audio Filename format: `<Letter><3 digits>.wav`
-
-Example:
-```text
-B002.wav
-S044.wav
-```
