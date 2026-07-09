@@ -62,7 +62,7 @@ $PYTHON feat_extr_whisper.py --aud_path $DISPLACE_DATA  --out_dir $OUTPUT_DIR/$F
 #    Clustering (AHC)
 #-------------------------------------------------
 
-FEAT_SEG_TSV="${DATA}_whisper_feat.tsv"
+FEAT_SEG_TSV="${DATA}_feat.tsv"
 RTTM_OUT_DIR="${DATA}_rttm_outdir"
 CLUSTER_ALGO="AHC"
 mkdir -p $OUTPUT_DIR/$RTTM_OUT_DIR
@@ -77,7 +77,7 @@ $PYTHON clustering.py $OUTPUT_DIR/$FEAT_SEG_TSV $OUTPUT_DIR/$RTTM_OUT_DIR $CLUST
 #    Scoring
 #-------------------------------------------------
 
-sys_RTTM=$OUTPUT_DIR/$RTTM_OUT_DIR/sys_whisper.rttm
+sys_RTTM=$OUTPUT_DIR/$RTTM_OUT_DIR/sys_output.rttm
 
 cat $OUTPUT_DIR/$RTTM_OUT_DIR/*.rttm  > $sys_RTTM
 $PYTHON score.py -r $ref_RTTM -s $sys_RTTM 
