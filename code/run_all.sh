@@ -54,7 +54,7 @@ $PYTHON create_subseg.py --input_folder $path_new_kaldi_segs --out_subsegments_f
 #
 FEAT_SUBDIR="${DATA}_feat/"
 mkdir -p $OUTPUT_DIR/$FEAT_SUBDIR 
-$PYTHON feat_extr.py --aud_path $DISPLACE_DATA  --out_dir $OUTPUT_DIR/$FEAT_SUBDIR --seg_dir  $OUTPUT_DIR/$SUBSEG_SUBDIR
+$PYTHON feat_extr_whisper.py --aud_path $DISPLACE_DATA  --out_dir $OUTPUT_DIR/$FEAT_SUBDIR --seg_dir  $OUTPUT_DIR/$SUBSEG_SUBDIR
 
 
 
