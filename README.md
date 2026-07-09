@@ -95,14 +95,24 @@ Finally create subsegments from the segments
 
 ## Feature Extraction
 
-Based on the created subsegments, run the feature extraction to get the whisper/ECAPA-TDNN posteriors
+Based on the created subsegments, run the feature extraction to get the Whisper/ECAPA-TDNN posteriors
+Make necessary changes in the run_all.sh script based on the requirement
+
+```text
+DISPLACE_DATAPATH="../data/"
+DATA="dev"
+DISPLACE_DATA="$DISPLACE_DATAPATH/$DATA"
+
+ref_RTTM="$DISPLACE_DATA/${DATA}_original.rttm"
+```
+
 
 ## Clustering
 Run the clustering algorithm (AHC) and perform VBHMM on top of it to generate RTTMs
 
 ## Scoring
 
-Combine the groundtruth RTTM files into a single RTTM file named dev_original.rttm / eval_original.rttm
+Combine the groundtruth RTTM files into a single RTTM file and rename it as dev_original.rttm/eval_original.rttm
 Compare groundtruth RTTMs with the system generated RTTMs to generate DER values
 
 ## How to run
