@@ -73,7 +73,7 @@ audio files              audio files
 
 ```
 
-### 2. Setting up the scoring tool to compute DER
+### 3. Setting up the scoring tool to compute DER
 1. Clone the dscore repository (**https://github.com/nryant/dscore**) in the code directory
 2. Install the required packages by running:
 3. 
