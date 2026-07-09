@@ -206,7 +206,7 @@ Before running the system:
 * Make sure your Hugging Face token is valid.
 * Accept the license agreements for the required Pyannote models before running the VAD module.
 
-## **Filename format:** `<Letter><3 digits>.wav`
+## 🎶 Audio Filename format: `<Letter><3 digits>.wav`
 
 Example:
 ```text
