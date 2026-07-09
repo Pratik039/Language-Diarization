@@ -43,7 +43,7 @@ Install the other required Python packages after creating the environment and se
 pip install pyannote.audio==0.0.1 numpy==1.26.4 openai-whisper fastcluster==1.2.0 kaldi_io pytorch-lightning==1.6.5
 ```
 
-### 2. Prepare the Audio File
+### 2. Prepare the Audio Files
 
 Download the DISPLACE 2 Challenge data from:
 
