@@ -53,7 +53,7 @@ Download the MERLIon CCS Challenge data from:
 
 https://researchdata.ntu.edu.sg/dataset.xhtml?persistentId=doi:10.21979/N9/ANXS8Z
 
-## Audio Directory Structure
+## 🗂️ Audio Directory Structure
 
 ```text
                Data
@@ -139,7 +139,7 @@ Runs the clustering algorithm (AHC) and performs VBHMM on top of it to generate 
 
 2. Compare groundtruth RTTMs with the system generated RTTMs to generate DER values (**score.py**)
 
-## How to run
+## 📝 How to run
 
 1. Place audio files in the data directory according to the file structure shown above
 
@@ -149,7 +149,7 @@ Runs the clustering algorithm (AHC) and performs VBHMM on top of it to generate 
  
 4. The Diarization Error Rate (DER) is computed by comparing the ground-truth RTTM files with the system-generated RTTM files.
 
-## 📁 Output
+## 📈  Output
 
 After successful execution, the system generates an output directory containing the language diarization results for the processed audio files.
 
