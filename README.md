@@ -93,15 +93,15 @@ pip install -r requirements.txt
 
 ## Data Preprocessing 
 
-1. Run VAD on the audio files to detect the speech regions and store the output in .pkl files (pyannote_vad.py)
+1. Run VAD on the audio files to detect the speech regions and store the output in .pkl files (**pyannote_vad.py**)
 
-2. Convert them to segment files and then to Kaldi formatted segment files (seg2kaldi.py)
+2. Convert them to segment files and then to Kaldi formatted segment files (**seg2kaldi.py**)
 
-3. Finally create subsegments from the segments (create_subseg.py)
+3. Finally create subsegments from the segments (**create_subseg.py**)
 
 ## Feature Extraction
 
-Based on the created subsegments, run the feature extraction to get the Whisper/ECAPA-TDNN posteriors (feat_extr_whisper.py/feat_extr_ecapa.py)
+Based on the created subsegments, run the feature extraction to get the Whisper/ECAPA-TDNN posteriors (**feat_extr_whisper.py** / **feat_extr_ecapa.py**)
 
 ## ⚙️ Dataset Configuration
 
@@ -131,13 +131,13 @@ ref_RTTM="$DISPLACE_DATA/${DATA}_original.rttm"
 Simply change the value of `DATA` from `"dev"` to `"eval"` (or vice versa) before running the script.
 
 ## Clustering
-Runs the clustering algorithm (AHC) and performs VBHMM on top of it to generate RTTMs (clustering.py)
+Runs the clustering algorithm (AHC) and performs VBHMM on top of it to generate RTTMs (**clustering.py**)
 
 ## Scoring
 
 1. Combine the groundtruth RTTM files into a single RTTM file and rename it as dev_original.rttm/eval_original.rttm
 
-2. Compare groundtruth RTTMs with the system generated RTTMs to generate DER values (score.py)
+2. Compare groundtruth RTTMs with the system generated RTTMs to generate DER values (**score.py**)
 
 ## How to run
 
