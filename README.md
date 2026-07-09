@@ -82,7 +82,7 @@ S044.wav
 ### 3. Setting up the scoring tool to compute DER
 1. Clone the dscore repository (**https://github.com/nryant/dscore**) in the `code` directory
 2. Move **all files and folders** inside the cloned `dscore` directory to the `code` directory
-3. Delete the now-empty `dscore` directory.
+3. Delete the now-empty `dscore` directory
 4. Install the required packages by running:
    
 ```text
