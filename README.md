@@ -81,22 +81,21 @@ audio files              audio files
 pip install -r requirements.txt
 ```
 
-## ▶️ Running Language Diarization
+## ▶️ Language Diarization Scripts
 
-## Data Preprocessing
+## Data Preprocessing 
 
-Run VAD on the audio files to detect the speech regions
+1. Run VAD on the audio files to detect the speech regions and store the output in .pkl files (pyannote_vad.py)
 
-VAD output is stored in .pkl files
+2. Convert them to segment files and then to Kaldi formatted segment files (seg2kaldi.py)
 
-Convert them to segment files and then to Kaldi formatted segment files
-
-Finally create subsegments from the segments
+3. Finally create subsegments from the segments (create_subseg.py)
 
 ## Feature Extraction
 
-Based on the created subsegments, run the feature extraction to get the Whisper/ECAPA-TDNN posteriors
-Make necessary changes in the run_all.sh script based on the requirement
+1. Based on the created subsegments, run the feature extraction to get the Whisper/ECAPA-TDNN posteriors (feat_extr_whisper.py/feat_extr_ecapa.py)
+
+2. Make necessary changes in the run_all.sh script based on the requirement
 
 ```text
 DISPLACE_DATAPATH="../data/"
@@ -108,12 +107,13 @@ ref_RTTM="$DISPLACE_DATA/${DATA}_original.rttm"
 
 
 ## Clustering
-Run the clustering algorithm (AHC) and perform VBHMM on top of it to generate RTTMs
+Runs the clustering algorithm (AHC) and performs VBHMM on top of it to generate RTTMs (clustering.py)
 
 ## Scoring
 
-Combine the groundtruth RTTM files into a single RTTM file and rename it as dev_original.rttm/eval_original.rttm
-Compare groundtruth RTTMs with the system generated RTTMs to generate DER values
+1. Combine the groundtruth RTTM files into a single RTTM file and rename it as dev_original.rttm/eval_original.rttm
+
+2. Compare groundtruth RTTMs with the system generated RTTMs to generate DER values (score.py)
 
 ## How to run
 
